@@ -1,0 +1,24 @@
+.header2 {
+    font-size: 22px;
+    padding: 0.3em 1%;
+    color: white;
+}
+
+p {
+    color: white;
+    font-size: 16px;
+    padding: 0.15em 1%;
+}
+
+.kalenderReklam a img {
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 250px;
+    margin: 1% 0%;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.kalenderReklam a img:hover {
+    opacity: 0.5;
+}

@@ -1,0 +1,147 @@
+body {
+    background-color: rgb(202, 175, 158);
+    background-size: 100%;
+    font-family: "Comic sans MS";
+}
+
+.pageSetup {
+    width: auto;
+    height: 244.41px;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.header {
+    background-image: url(../images/BakgrundHeader.png);
+    width: auto;
+    height: 206.41px;
+}
+
+.logo {
+    display: block;
+    width: auto;
+    height: 118.62px;
+}
+
+.logo a img {
+    width: 106.62px;
+    height: 106.62px;
+    margin: 6px;
+    align-content: center;
+    border-radius: 20px;
+}
+
+#webName {
+    width: auto;
+    font-size: 45px;
+    color: rgb(180, 145, 122);
+    margin-bottom: 10px;
+}
+
+#slogan {
+    width: auto;
+    height: 30px;
+    font-size: 18px;
+    color: rgb(180, 145, 122);
+    margin-bottom: 3px;
+}
+
+h4 img {
+    width: 25px;
+    height: 25px;
+    border-radius: 19.5px;
+    vertical-align: middle;
+}
+
+.meny {
+    height: 40px;
+    background-color: rgb(180, 145, 122);
+    z-index: 1px;
+}
+
+.button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: 18px;
+    height: auto;
+    padding-top: 11.2px;
+    padding-bottom: 11.2px;
+}
+
+.button:hover {
+    font-weight: bold;
+    background-color: rgb(145, 114, 95);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.button:active {
+    background-color: rgb(145, 114, 95);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 9.09%;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(145, 114, 95);
+    min-width: 200%;
+    max-width: 800%;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    z-index: 10;
+}
+
+.dropdownInside {
+    position: relative;
+    display: block;
+    padding: 3%;
+}
+
+.dropdownInside a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.dropdownInside a:hover {
+    font-weight: bold;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: rgb(145, 114, 95);
+}
+
+#content {
+    width: 94%;
+    height: fit-content;
+    min-height: 350px;
+    margin: 1.5%;
+    padding: 1.5%;
+    border-radius: 20px;
+    background-color: rgb(145, 114, 95);
+}
+
+#footer {
+    margin-bottom: 10px;
+}
+
+#footer p {
+    color: white;
+    text-align: center;
+    font-size: 11px;
+    font-weight: lighter;
+}

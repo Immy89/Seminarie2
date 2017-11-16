@@ -1,0 +1,26 @@
+.header2 {
+    display: block;
+    margin: 0.3em 1%;
+    font-size: 22px;
+    color: white;
+}
+
+.list {
+    width: 97%;
+    height: 95%;
+    margin: 1.5% 1%;
+}
+
+.listItem {
+    display: block;
+    margin: 0.3em 0%;
+}
+
+.listItem a {
+    text-decoration: none;
+    color: white;
+}
+
+.listItem a:hover {
+    font-weight: bold;
+}
