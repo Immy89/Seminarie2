@@ -6,14 +6,14 @@ session_start();
 
 $conn = connectToDatabase();
 
-$emailOrUsername = $_POST["emailOrUsername"];
+$username = $_POST["usernameLogin"];
 $password = $_POST["passwordLogin"];
 
-$checkIfUserExist = "SELECT Användarnamn, Email, Lösenord FROM användare WHERE Användarnamn = '$emailOrUsername' OR Email = '$emailOrUsername' AND Lösenord = '$password'";
+$checkIfUserExist = "SELECT Användarnamn, Lösenord FROM användare WHERE Användarnamn = '$username' AND Lösenord = '$password'";
 $result = $conn->query($checkIfUserExist);
 
 if ($result->num_rows > 0) {
-    $_SESSION["loggedInUser"] = $emailOrUsername;
+    $_SESSION["loggedInUser"] = $username;
 
     header("Location: index.php");
 } else {
