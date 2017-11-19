@@ -54,8 +54,7 @@ h4 img {
 }
 
 .meny {
-    min-height: 40px;
-    height: fit-content;
+    height: 40px;
     background-color: rgb(180, 145, 122);
     z-index: 1px;
 }
@@ -68,7 +67,7 @@ h4 img {
     display: block;
     cursor: pointer;
     font-size: 18px;
-    height: fit-content;
+    height: auto;
     padding-top: 11.2px;
     padding-bottom: 11.2px;
 }
@@ -88,17 +87,6 @@ h4 img {
     position: relative;
     display: inline-block;
     width: 9.09%;
-    min-height: 40px;
-    height: fit-content;
-    text-align: center;
-    cursor: pointer;
-}
-
-.dropdownRight {
-    position: relative;
-    display: inline-block;
-    float: right;
-    width: 9.09%;
     height: 40px;
     text-align: center;
     cursor: pointer;
@@ -108,9 +96,8 @@ h4 img {
     display: none;
     position: absolute;
     background-color: rgb(145, 114, 95);
-    min-width: 90%;
-    max-width: 790%;
-    padding: 5%;
+    min-width: 200%;
+    max-width: 800%;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
@@ -127,9 +114,6 @@ h4 img {
     text-decoration: none;
     cursor: pointer;
     color: white;
-    float: left;
-    width: 100%;
-    padding: 2%;
 }
 
 .dropdownInside a:hover {
@@ -137,11 +121,6 @@ h4 img {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
-    background-color: rgb(145, 114, 95);
-}
-
-.dropdownRight:hover .dropdown-content {
     display: block;
     background-color: rgb(145, 114, 95);
 }

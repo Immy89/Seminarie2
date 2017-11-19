@@ -1,8 +1,3 @@
-<?php 
-    session_start();
-    include(Functions.php);
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -35,35 +30,15 @@
                     <a class="button" href="index.php?content=Recept.html">Recept</a>
                     <ul class="dropdown-content">
                         <li class="dropdownInside">
-                            <a href="index.php?content=Recipes/Köttbullar_med_Mos.php">Gräddkokta viltköttbullar och rårörda lingon med pepparrot</a>
+                            <a href="index.php?content=Recipes/Köttbullar_med_Mos.html">Köttbullar med Mos</a>
                         </li>
                         <li class="dropdownInside">
-                            <a href="index.php?content=Recipes/Vietnamesiska_Pannkakor.php">Vietnamesiska Pannkakor</a>
+                            <a href="index.php?content=Recipes/Vietnamesiska_Pannkakor.html">Vietnamesiska Pannkakor</a>
                         </li>
                         <li class="dropdownInside">
-                            <a href="index.php?content=Recipes/Veganska_Bananpannkakor.php">Veganska Bananpannkakor</a>
+                            <a href="index.php?content=Recipes/Veganska_Bananpannkakor.html">Veganska Bananpannkakor</a>
                         </li>
                     </ul>
-                </li>
-                <li class="dropdownRight">
-                    <?php
-                        if (empty($_SESSION["loggedInUser"])) :
-                    ?>
-                    <a class="button" href="index.php?content=LoggaIn_Registrera.html">Logga in</a>
-                    <?php
-                        else :
-                    ?>
-                    <a class="button" href="index.php">Inloggad som 
-                        <?php echo $_SESSION["loggedInUser"]; ?>
-                    </a>
-                    <ul class="dropdown-content">
-                        <li class="dropdownInside">
-                            <a href="LoggaUt.php">Logga ut</a>
-                        </li>
-                    </ul>
-                    <?php
-                        endif;
-                    ?>
                 </li>
             </ul>
         </div>
@@ -73,7 +48,7 @@
                 if (isset($_GET['content'])){
                     $pageToInclude = $_GET['content'];
                 }
-                include($pageToInclude); 
+                echo file_get_contents($pageToInclude); 
             ?>
         </div>
         <div id="footer">

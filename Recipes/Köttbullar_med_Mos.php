@@ -1,10 +1,15 @@
+<?php
+    session_start();
+    include('Functions.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
     <head>
         <title>Köttbullar med Mos</title>
         <meta charset="UTF-8" />
-        <link rel="Stylesheet" type="text/css" href="../css/recept.css">
+        <link rel="Stylesheet" type="text/css" href="../css/recept.php">
     </head>
 
     <body>
@@ -48,13 +53,25 @@
         </div>
         <div id="recensioner">
             <h3>Recensioner:</h3>
-            <div>
-                <h5>Stina:</h5>
-                <p>Mycket gott och det gick väldigt fort att laga jämfört med andra recept på köttbullar.</p>
+            <div id="SkapaRecensioner">
+                <form action="SkapaRecension.php" method="POST">
+                    <input type="hidden" name="receptId" value="2">
+                    <input type="hidden" name="relocateTo" value="index.php?content=Recipes/Köttbullar_med_Mos.php">
+                    <div class="container">
+                        <label>
+                            <b>Kommentar</b>
+                        </label>
+                        <textarea placeholder="Kommentar" name="kommentar" required></textarea>
+                        <button type="submit">Publicera</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <h5>Kalle:</h5>
-                <p>Gott, men jag skulle gärna ha haft moset inkluderat i receptet.</p>
+            <div id="InlästaRecensioner">
+            <?php
+                    $conn = connectToDatabase();
+                    fetchComments(2, 'index.php?content=Recipes/Köttbullar_med_Mos.php', $conn);
+                    $conn->close();
+                ?>
             </div>
         </div>
     </body>

@@ -1,10 +1,16 @@
+<?php
+    session_start();
+    include('Functions.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
     <head>
         <title>Veganska Bananpannkakor</title>
         <meta charset="UTF-8" />
-        <link rel="Stylesheet" type="text/css" href="../css/recept.css">
+        <link rel="Stylesheet" type="text/css" href="../css/recept.php">
+        <link rel="Stylesheet" type="text/css" href="../css/functions.css">
     </head>
 
     <body>
@@ -50,13 +56,25 @@
         </div>
         <div id="recensioner">
             <h3>Recensioner:</h3>
-            <div>
-                <h5>Stina:</h5>
-                <p>Supergott, jag skulle kunna äta dessa varje dag.</p>
+            <div id="SkapaRecensioner">
+                <form action="SkapaRecension.php" method="POST">
+                    <input type="hidden" name="receptId" value="1">
+                    <input type="hidden" name="relocateTo" value="index.php?content=Recipes/Veganska_Bananpannkakor.php">
+                    <div class="container">
+                        <label>
+                            <b>Kommentar</b>
+                        </label>
+                        <textarea placeholder="Kommentar" name="kommentar" required></textarea>
+                        <button type="submit">Publicera</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <h5>Kalle:</h5>
-                <p>Goda.</p>
+            <div id="InlästaRecensioner">
+                <?php
+                    $conn = connectToDatabase();
+                    fetchComments(1, 'index.php?content=Recipes/Veganska_Bananpannkakor.php', $conn);
+                    $conn->close();
+                ?>
             </div>
         </div>
     </body>

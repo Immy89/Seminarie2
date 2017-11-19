@@ -1,10 +1,15 @@
+<?php
+    session_start();
+    include('Functions.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
     <head>
         <title>Vietnamesiska Pannkakor</title>
         <meta charset="UTF-8" />
-        <link rel="Stylesheet" type="text/css" href="../css/recept.css">
+        <link rel="Stylesheet" type="text/css" href="../css/recept.php">
     </head>
 
     <body>
@@ -63,13 +68,25 @@
         </div>
         <div id="recensioner">
             <h3>Recensioner:</h3>
-            <div>
-                <h5>Stina:</h5>
-                <p>Mycket gott och mättande.</p>
+            <div id="SkapaRecensioner">
+                <form action="SkapaRecension.php" method="POST">
+                    <input type="hidden" name="receptId" value="3">
+                    <input type="hidden" name="relocateTo" value="index.php?content=Recipes/Vietnamesiska_Pannkakor.php">
+                    <div class="container">
+                        <label>
+                            <b>Kommentar</b>
+                        </label>
+                        <textarea placeholder="Kommentar" name="kommentar" required></textarea>
+                        <button type="submit">Publicera</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <h5>Kalle:</h5>
-                <p>Kul att kunna variera pankakorna lite.</p>
+            <div id="InlästaRecensioner">
+            <?php
+                    $conn = connectToDatabase();
+                    fetchComments(3, 'index.php?content=Recipes/Vietnamesiska_Pannkakor.php', $conn);
+                    $conn->close();
+                ?>
             </div>
         </div>
     </body>
